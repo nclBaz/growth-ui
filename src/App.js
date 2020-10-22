@@ -38,7 +38,10 @@ function Protected({ component: Component, ...rest }) {
   const clientLog = async () => {
     let data = await getUser();
     console.log(data);
+    if (!data) return;
+
     setClient({ login: true, client: { ...data } });
+    return;
   };
   useEffect(() => {
     clientLog();

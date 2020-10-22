@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { client as clientAtom } from "./atoms";
-const server = "http://localhost:3002/";
+const server = process.env.API_URL;
+
 export const login = async (creds) => {
   const head = {
     method: "POST",
-    url: "http://localhost:3002/client/login",
+    url: server + "client/login",
     data: creds,
   };
   try {
@@ -27,21 +28,23 @@ export const login = async (creds) => {
     console.log(error);
   }
 };
+
 export const getUser = async () => {
   try {
-    let user = await axios.get("http://localhost:3002/client", {
+    let user = await axios.get(server + "client", {
       withCredentials: true,
     });
+    if (user.status !== 200) return false;
     user = user.data;
     return user;
   } catch (error) {
     if (error.response.status === 401) {
       try {
         await refreshTokens();
-        let user = await axios.get("http://localhost:3002/client", {
+        let user = await axios.get(server + "client", {
           withCredentials: true,
         });
-        if (!user) return;
+        if (!user) return false;
         user = user.data;
         return user;
       } catch (error) {
@@ -50,10 +53,11 @@ export const getUser = async () => {
     }
   }
 };
+
 export const signup = async (creds) => {
   const head = {
     method: "POST",
-    url: "http://localhost:3002/client",
+    url: server + "client",
     data: creds,
   };
   try {
@@ -74,6 +78,7 @@ export const signup = async (creds) => {
     console.log(error);
   }
 };
+
 const refreshTokens = async () => {
   const config = {
     method: "POST",
@@ -85,6 +90,7 @@ const refreshTokens = async () => {
     console.log(error.response);
   }
 };
+
 export const updateProfileImage = async (id, file) => {
   const config = {
     method: "post",
@@ -126,7 +132,7 @@ export const updateProfile = async (data) => {
 export const allBlogPosts = async () => {
   const config = {
     method: "GET",
-    url: "http://localhost:3002/blog",
+    url: server + "/blog",
   };
   try {
     let posts = await axios(config, { withCredentials: true });
@@ -146,7 +152,7 @@ export const allBlogPosts = async () => {
 export const createPost = async (post, image) => {
   const config = {
     method: "POST",
-    url: "http://localhost:3002/blog/",
+    url: server + "/blog/",
     data: post,
   };
   try {
@@ -172,7 +178,7 @@ export const createPost = async (post, image) => {
 export const deletePost = async (id) => {
   const config = {
     method: "DELETE",
-    url: "http://localhost:3002/blog/" + id,
+    url: server + "blog/" + id,
   };
   try {
     let deletedPost = await axios(config, { withCredentials: true });
@@ -193,7 +199,7 @@ export const postImage = async (id, img) => {
   fd.append("image", img);
   const config = {
     method: "POST",
-    url: "http://localhost:3002/blog/image/" + id,
+    url: server + "blog/image/" + id,
     data: fd,
   };
   try {

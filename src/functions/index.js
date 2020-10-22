@@ -28,24 +28,3 @@ export const identifyPlant = async (file) => {
   });
   return response.data;
 };
-
-//MAKES A SEARCH REQUEST
-export const plantsBySearch = async (searchKey) => {
-  const head = {
-    method: "GET",
-    url: `http://localhost:3001/api/search?search=${searchKey}`,
-  };
-  const response = await axios(head);
-
-  return response.data;
-};
-
-export const plantById = async (id) => {
-  const head = {
-    method: "GET",
-    url: `http://localhost:3001/api/plants/?id=${id}`,
-  };
-  const response = await axios(head);
-
-  return response.data;
-};
