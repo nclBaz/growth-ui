@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { client as clientAtom } from "./atoms";
-const server = process.env.API_URL;
+const server = process.env.REACT_APP_API_URL;
 
 export const login = async (creds) => {
   const head = {
@@ -38,6 +38,7 @@ export const getUser = async () => {
     user = user.data;
     return user;
   } catch (error) {
+    if (!error.response) return;
     if (error.response.status === 401) {
       try {
         await refreshTokens();
@@ -48,6 +49,7 @@ export const getUser = async () => {
         user = user.data;
         return user;
       } catch (error) {
+        if (!error.response) return;
         console.log(error.response);
       }
     }
@@ -132,7 +134,7 @@ export const updateProfile = async (data) => {
 export const allBlogPosts = async () => {
   const config = {
     method: "GET",
-    url: server + "/blog",
+    url: server + "blog",
   };
   try {
     let posts = await axios(config, { withCredentials: true });
@@ -152,7 +154,7 @@ export const allBlogPosts = async () => {
 export const createPost = async (post, image) => {
   const config = {
     method: "POST",
-    url: server + "/blog/",
+    url: server + "blog/",
     data: post,
   };
   try {

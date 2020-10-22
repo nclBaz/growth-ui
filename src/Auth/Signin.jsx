@@ -10,6 +10,7 @@ const Signin = ({ openModal, history }) => {
 
   useEffect(() => {
     if (client.login) history.push("/blog");
+    console.log(process.env.NODE_ENV);
   }, [client, history]);
 
   const APIresponse = async () => {

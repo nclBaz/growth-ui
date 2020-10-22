@@ -11,7 +11,7 @@ export const toBase64 = (file) =>
 
 export const identifyPlant = async (file) => {
   const data = {
-    api_key: process.env.PLANTID_API_KEY,
+    api_key: process.env.REACT_APP_PLANTID_API_KEY,
     images: [file],
     modifiers: ["similar_images"],
     plant_language: "en",
@@ -22,7 +22,7 @@ export const identifyPlant = async (file) => {
       "wiki_description",
     ],
   };
-  const response = await axios(process.env.PLANTID_API_URL, {
+  const response = await axios(process.env.REACT_APP_PLANTID_API_URL, {
     method: "POST",
     data,
   });

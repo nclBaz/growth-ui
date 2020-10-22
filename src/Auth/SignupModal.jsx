@@ -15,7 +15,8 @@ const Signup = ({ show, handleModal, history }) => {
     if (!creds) return;
     try {
       const clientData = await signup(creds);
-      setClient({ login: true, client: { ...clientData } });
+      if (!(clientData.status === 201))
+        setClient({ login: true, client: { ...clientData } });
     } catch (error) {
       console.log(error);
     }
