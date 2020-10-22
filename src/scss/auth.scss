@@ -1,0 +1,127 @@
+@import "./variables.scss";
+
+.signin {
+  justify-content: center;
+  @extend .rounded;
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    color: $darkColor;
+  }
+  &_inputs {
+    padding: 0.5em 0 0 0;
+    width: 300px;
+    label {
+      margin: 0;
+    }
+
+    input {
+      font-size: 0.8em;
+      outline: none;
+      border: 2px solid $darkBlueColor;
+      width: 100%;
+      &:focus {
+        outline: none;
+        border: 2px solid $secondColor;
+      }
+    }
+  }
+  &_buttons {
+    width: 300px;
+    padding-top: 1em;
+    display: flex;
+    justify-content: center;
+    button {
+      width: 100%;
+      text-align: center;
+      outline: none;
+      background-color: $secondColor;
+      border: none;
+      letter-spacing: 1px;
+      color: white;
+      &:hover {
+        background-color: $secondColor;
+        box-shadow: inset 5px 5px 300px 26px rgba(0, 1, 0, 0.22);
+      }
+    }
+  }
+  a {
+    font-size: 0.8em;
+  }
+  .signup_button {
+    margin-top: 0.3em;
+    border-top: 1px solid $darkColor;
+    padding: 0.5em;
+    button {
+      width: 60%;
+      text-align: center;
+      outline: none;
+      background-color: $darkBlueColor;
+      color: $white;
+      border: none;
+      letter-spacing: 1px;
+      &:hover {
+        color: white;
+        box-shadow: inset 5px 5px 300px 26px rgba(0, 1, 0, 0.22);
+      }
+    }
+  }
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5em;
+  &_input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5em 0;
+
+    input {
+      width: 100%;
+      max-width: 300px;
+      font-size: 0.8em;
+      outline: none;
+      border: 2px solid $darkBlueColor;
+      &:focus {
+        outline: none;
+        border: 2px solid $secondColor;
+      }
+    }
+  }
+  &_button {
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    button {
+      width: 100%;
+      max-width: 200px;
+      text-align: center;
+      outline: none;
+      background-color: $darkBlueColor;
+      color: $white;
+      border: none;
+      letter-spacing: 1px;
+      &:hover {
+        color: white;
+        box-shadow: inset 5px 5px 300px 26px rgba(0, 1, 0, 0.22);
+      }
+    }
+  }
+  p {
+    font-size: 0.6em;
+    margin: 0;
+  }
+}
+.modal-dialog {
+  max-width: 400px !important;
+}

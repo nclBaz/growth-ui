@@ -1,0 +1,141 @@
+@import "./variables.scss";
+.link_active {
+  color: $secondColor !important;
+  border-bottom: 2px solid $secondColor !important;
+}
+.bttn {
+  outline: none;
+  border: 1px solid $secondColor;
+  padding: 3px;
+  background-color: white;
+  color: $secondColor;
+  border-radius: 0.4em;
+  letter-spacing: 2px;
+  box-shadow: none;
+  transition: all 300ms;
+  &:hover {
+    background-color: $secondColor;
+    color: white;
+    border: 1px solid white;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    color: rgb(113, 113, 199);
+    border-color: rgb(113, 113, 199);
+    background-color: white;
+  }
+}
+.img-slider {
+  display: flex;
+  img {
+    max-width: 200px;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.1em;
+  border-radius: 0.5em;
+  margin: 1em 0;
+  &_img {
+    height: 200px;
+    background-position: center;
+    background-size: 99%;
+    background-repeat: no-repeat;
+    border-radius: 0.5em;
+    opacity: 90%;
+  }
+  &_body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  &_footer {
+    text-align: center;
+    background-color: $darkBlueColor;
+    border-radius: 0.5em;
+    a {
+      text-decoration: none;
+      color: $lightBlueColor;
+    }
+  }
+}
+.header {
+  transition: all 300ms;
+  transform: rotate(360deg);
+}
+.identify {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-top: 1em;
+  &_description {
+  }
+  &_frame {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 1em;
+
+  &_container {
+    background-image: url("https://webneel.com/wallpaper/sites/default/files/images/08-2018/3-nature-wallpaper-mountain.jpg");
+    background-position: center;
+    background-size: 99.9%;
+    background-repeat: no-repeat;
+    border-radius: 1em;
+    min-height: 10em;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_bar {
+      input {
+        background: transparent;
+        color: white;
+        border: 1px solid $mainColor;
+        letter-spacing: 1px;
+        box-shadow: none;
+        border-right: none;
+        outline: none;
+      }
+      button {
+        background: transparent;
+        outline: none;
+        border: 1px solid $mainColor;
+        color: $lightBlueColor;
+        border-top-right-radius: 1em;
+        &:hover {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+}
+
+.nav-head {
+  display: flex;
+  @extend .col-12;
+  justify-content: center;
+  span {
+    text-decoration: none;
+    margin: 0 1em;
+    cursor: pointer;
+    color: $darkBlueColor;
+    &:hover {
+      color: $darkBlueColor;
+      border-bottom: 2px solid $lightBlueColor;
+    }
+  }
+}

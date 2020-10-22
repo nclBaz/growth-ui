@@ -1,0 +1,43 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables.scss";
+
+.head_pic {
+  @extend .container;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1440px;
+  justify-content: center;
+  padding: 0 !important;
+ background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 200px;
+}
+.navbar {
+  @extend .container;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1440px;
+  justify-content: center;
+  padding: 0 !important;
+
+  background-color: $darkColor;
+  &_nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    a {
+      color: white;
+      margin: 0 1em;
+      cursor: pointer;
+      transition: all 300ms;
+      border-bottom: 2px solid $mainColor;
+      &:hover {
+        color: $secondColor;
+        border-bottom: 2px solid $secondColor;
+      }
+    }
+  }
+}

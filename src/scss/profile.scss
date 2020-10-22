@@ -1,0 +1,32 @@
+.profile {
+}
+
+.profileModal {
+  display: flex;
+  flex-direction: column;
+  input {
+    margin: 0.5em 1em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $darkColor;
+  }
+  &_button {
+    display: flex;
+    border-top: 1px solid #dee2e6;
+    margin-top: 1em;
+    button {
+      margin: 0.5em;
+      margin-left: auto;
+      text-align: center;
+      outline: none;
+      background-color: $darkBlueColor;
+      color: $white;
+      border: none;
+      letter-spacing: 1px;
+      &:hover {
+        color: white;
+        box-shadow: inset 5px 5px 300px 26px rgba(0, 1, 0, 0.22);
+      }
+    }
+  }
+}
