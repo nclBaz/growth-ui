@@ -3,9 +3,9 @@ import Navbar from "../components/Navbar";
 import IotForm from "../components/IotForm";
 import Control from "../components/Control";
 const io = require("socket.io-client");
-
+const serverIp = "http://10.204.209.253/";
 const Iot = () => {
-  const [socket, setSocket] = useState(io(process.env.REACT_APP_SOCKET_CONN));
+  const [socket, setSocket] = useState(io(serverIp));
 
   return (
     <>
