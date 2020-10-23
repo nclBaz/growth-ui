@@ -5,7 +5,7 @@ import Control from "../components/Control";
 const io = require("socket.io-client");
 
 const Iot = () => {
-  const [socket, setSocket] = useState(io("http://192.168.0.34:5000"));
+  const [socket, setSocket] = useState(io(process.env.REACT_APP_SOCKET_CONN));
 
   return (
     <>
