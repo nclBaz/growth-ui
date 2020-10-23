@@ -7,6 +7,7 @@ export const login = async (creds) => {
   const head = {
     method: "POST",
     url: server + "client/login",
+    credentials: "same-origin",
     data: creds,
   };
   try {
