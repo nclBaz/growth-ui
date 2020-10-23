@@ -10,11 +10,10 @@ import { allBlogPosts } from "../recoilState/api";
 const Blog = () => {
   const [blogPosts, setPosts] = useRecoilState(Allposts);
   const client = useRecoilValue(Client);
-  
+
   useEffect(() => {
     getPosts();
-    console.log(client);
-  }, []);
+  }, [blogPosts]);
 
   const getPosts = async () => {
     let posts = await allBlogPosts();

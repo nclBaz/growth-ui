@@ -23,7 +23,6 @@ export const login = async (creds) => {
       email: response.email,
       device: response.device,
     };
-    localStorage.setItem("user", JSON.stringify(client));
     return client;
   } catch (error) {
     console.log(error);
