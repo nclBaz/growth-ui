@@ -13,7 +13,7 @@ const Blog = () => {
 
   useEffect(() => {
     getPosts();
-  }, [blogPosts]);
+  }, []);
 
   const getPosts = async () => {
     let posts = await allBlogPosts();
