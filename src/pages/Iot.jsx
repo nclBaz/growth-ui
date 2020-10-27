@@ -3,11 +3,10 @@ import Navbar from "../components/Navbar";
 import IotForm from "../components/IotForm";
 import Control from "../components/Control";
 const io = require("socket.io-client");
-const serverIp = "http://10.204.209.253:2000";
-
+const serverIp = "https://10.204.209.253:2000";
 
 const Iot = () => {
-  const socket = io(serverIp);
+  const socket = io(serverIp, { secure: true, rejectUnauthorized: false });
 
   return (
     <>
