@@ -1,13 +1,10 @@
 import axios from "axios";
-import { useRecoilState } from "recoil";
-import { client as clientAtom } from "./atoms";
 const server = process.env.REACT_APP_API_URL;
 
 export const login = async (creds) => {
   const head = {
     method: "POST",
     url: server + "client/login",
-    credentials: "same-origin",
     data: creds,
   };
   try {
@@ -63,7 +60,7 @@ export const signup = async (creds) => {
     data: creds,
   };
   try {
-    let response = await axios(head,{withCredentials:true});
+    let response = await axios(head, { withCredentials: true });
     if (response.status === false) return;
 
     response = response.data;
