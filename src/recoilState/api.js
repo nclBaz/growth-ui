@@ -63,7 +63,7 @@ export const signup = async (creds) => {
     data: creds,
   };
   try {
-    let response = await axios(head);
+    let response = await axios(head,{withCredentials:true});
     if (response.status === false) return;
 
     response = response.data;
