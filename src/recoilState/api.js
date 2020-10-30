@@ -103,6 +103,7 @@ export const updateProfileImage = async (id, file) => {
     return updateProfile;
   } catch (error) {
     if (error.response) {
+      if (error.response.status !== 401) return;
       await refreshTokens();
       return false;
     }
@@ -122,6 +123,7 @@ export const updateProfile = async (data) => {
     return updateProfile;
   } catch (error) {
     if (error.response) {
+      if (error.response.status !== 401) return;
       await refreshTokens();
       return false;
     }
@@ -141,6 +143,7 @@ export const allBlogPosts = async () => {
     return posts.reverse();
   } catch (error) {
     if (error.response) {
+      if (error.response.status !== 401) return;
       await refreshTokens();
       return false;
     }
@@ -167,6 +170,7 @@ export const createPost = async (post, image) => {
     }
   } catch (error) {
     if (error.response) {
+      if (error.response.status !== 401) return;
       await refreshTokens();
       return false;
     }
@@ -186,6 +190,7 @@ export const deletePost = async (id) => {
     return deletedPost;
   } catch (error) {
     if (error.response) {
+      if (error.response.status !== 401) return;
       await refreshTokens();
       return false;
     }
@@ -207,6 +212,7 @@ export const postImage = async (id, img) => {
     image = image.data;
   } catch (error) {
     if (error.response) {
+      if (error.response.status !== 401) return;
       await refreshTokens();
       return false;
     }

@@ -1,6 +1,7 @@
 import React from "react";
-import cover from "../images/cover.jpg";
+import cover from "../../static/images/cover.jpg";
 import { Link } from "react-router-dom";
+import "./styles.scss";
 
 const Navbar = () => {
   return (

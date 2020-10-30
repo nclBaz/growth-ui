@@ -3,6 +3,7 @@ import { Modal } from "react-bootstrap";
 import { useRecoilState } from "recoil";
 import { client as clientAtom } from "../recoilState/atoms";
 import { signup } from "../recoilState/api";
+import "./styles.scss";
 const Signup = ({ show, handleModal, history }) => {
   const [creds, setCreds] = useState(null);
   const [client, setClient] = useRecoilState(clientAtom);

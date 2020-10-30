@@ -1,19 +1,6 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "./variables.scss";
+@import "../../scss/variables.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.head_pic {
-  @extend .container;
-  display: flex;
-  margin: 0 auto;
-  max-width: 1440px;
-  justify-content: center;
-  padding: 0 !important;
- background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  min-height: 200px;
-}
 .navbar {
   @extend .container;
   display: flex;

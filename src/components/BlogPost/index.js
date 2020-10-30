@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import { deletePost } from "../recoilState/api";
+import { deletePost } from "../../recoilState/api";
+import "./styles.scss";
 
 const BlogPost = ({ blog }) => {
   const blogpost = useRef();
@@ -36,7 +37,11 @@ const BlogPost = ({ blog }) => {
         <div className="blog_post_body_body">
           <p className="">{blog.text}</p>
           {blog.image ? (
-            <img src={blog.image} alt="" className="img-fluid img-thumbnail mx-auto" />
+            <img
+              src={blog.image}
+              alt=""
+              className="img-fluid img-thumbnail mx-auto"
+            />
           ) : null}
         </div>
       </div>

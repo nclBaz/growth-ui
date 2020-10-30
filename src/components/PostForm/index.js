@@ -4,7 +4,8 @@ import {
   AiOutlinePicture,
   AiOutlineSend,
 } from "react-icons/ai";
-import { createPost } from "../recoilState/api";
+import { createPost } from "../../recoilState/api";
+import "./styles.scss";
 
 const PostForm = ({ client }) => {
   const [image, setImage] = useState(null);

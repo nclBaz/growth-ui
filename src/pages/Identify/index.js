@@ -1,8 +1,9 @@
 import React, { useState, useRef } from "react";
-import Navbar from "../components/Navbar";
-import { toBase64, identifyPlant } from "../functions";
+import Navbar from "../../components/Navbar";
+import { toBase64, identifyPlant } from "../../functions";
 import { BsCloudUpload } from "react-icons/bs";
-import Plantcard from '../components/PlantCard'
+import Plantcard from "../../components/PlantCard";
+import "./styles.scss";
 
 const Identify = () => {
   const [pic, setPic] = useState();
@@ -83,9 +84,7 @@ const Identify = () => {
         <div className="row d-flex justify-content-center">
           {suggestions
             ? suggestions.map((plant) => {
-                return (
-                  <Plantcard plant={plant} />
-                );
+                return <Plantcard plant={plant} />;
               })
             : ""}
         </div>

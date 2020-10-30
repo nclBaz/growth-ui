@@ -1,6 +1,4 @@
-.profile {
-  @extend .container
-}
+@import "../../scss/variables.scss";
 
 .profileModal {
   display: flex;

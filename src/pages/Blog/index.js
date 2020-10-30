@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { blogPosts as Allposts, client as Client } from "../recoilState/atoms";
-import PostForm from "../components/PostForm";
-import BlogPost from "../components/BlogPost";
-import Navbar from "../components/Navbar";
+import {
+  blogPosts as Allposts,
+  client as Client,
+} from "../../recoilState/atoms";
+import PostForm from "../../components/PostForm";
+import BlogPost from "../../components/BlogPost";
+import Navbar from "../../components/Navbar";
 import { Spinner } from "react-bootstrap";
-import { allBlogPosts } from "../recoilState/api";
+import { allBlogPosts } from "../../recoilState/api";
 
 const Blog = () => {
   const [blogPosts, setPosts] = useRecoilState(Allposts);
@@ -17,9 +20,6 @@ const Blog = () => {
 
   const getPosts = async () => {
     let posts = await allBlogPosts();
-    while (!posts) {
-      posts = await allBlogPosts();
-    }
     setPosts(posts);
   };
 

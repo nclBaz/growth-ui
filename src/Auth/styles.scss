@@ -1,4 +1,5 @@
-@import "./variables.scss";
+@import "../scss/variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 .signin {
   justify-content: center;
@@ -63,7 +64,7 @@
       text-align: center;
       outline: none;
       background-color: $darkBlueColor;
-      color: $white;
+      color: white;
       border: none;
       letter-spacing: 1px;
       &:hover {
@@ -108,7 +109,7 @@
       text-align: center;
       outline: none;
       background-color: $darkBlueColor;
-      color: $white;
+      color: white;
       border: none;
       letter-spacing: 1px;
       &:hover {

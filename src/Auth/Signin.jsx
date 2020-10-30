@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { client as clientAtom } from "../recoilState/atoms";
 import { login } from "../recoilState/api";
 import { Link } from "react-router-dom";
-
+import "./styles.scss";
 const Signin = ({ openModal, history }) => {
   const [creds, setCreds] = useState(null);
   const [client, setClient] = useRecoilState(clientAtom);

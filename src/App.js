@@ -24,9 +24,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Protected path="/profile" component={Profile} />
           <Protected path="/blog" component={Blog} />
-          <Iot path="/iot" component={Iot} />
+          <Protected path="/iot" component={Iot} />
           <Protected path="/ai" component={Identify} />
-          <Route path="*" component={NotFound} />
+          <Protected path="*" component={NotFound} />
         </Switch>
       </Router>
     </RecoilRoot>

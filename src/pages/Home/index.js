@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import bgImage from "../images/cover.jpg";
-import Signin from "../Auth/Signin";
-import Signup from "../Auth/SignupModal";
+import bgImage from "../../static/images/cover.jpg";
+import Signin from "../../Auth/Signin";
+import Signup from "../../Auth/SignupModal";
+import "./styles.scss";
+
 const Home = (props) => {
   const [showModal, setModal] = useState(false);
 

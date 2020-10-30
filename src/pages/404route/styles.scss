@@ -1,0 +1,24 @@
+@import "../../scss/variables.scss";
+
+.notfound {
+  background-color: $darkColor;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  &_display {
+    margin: auto;
+    color: $darkBlueColor;
+    a {
+      text-decoration: none;
+      color: $mainColor;
+      font-size: 2em;
+      &:hover {
+        color: $secondColor;
+        text-decoration: underline;
+      }
+    }
+  }
+}

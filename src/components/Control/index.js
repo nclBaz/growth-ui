@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { RiPlantFill } from "react-icons/ri";
 import Switch from "react-switch";
 import { useRecoilState } from "recoil";
-import { envData } from "../recoilState/atoms";
+import { envData } from "../../recoilState/atoms";
+import './styles.scss';
 
 const Control = ({ socket }) => {
   const [manual, setManual] = useState({

@@ -1,0 +1,23 @@
+@import "../../scss/variables.scss";
+
+.identify {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 3em;
+  div {
+    button {
+      text-align: center;
+      outline: none;
+      background-color: white;
+      color: $secondColor;
+      border: 2px solid $darkBlueColor;
+      &:hover {
+        background-color: $secondColor;
+        color: white;
+      }
+    }
+  }
+}

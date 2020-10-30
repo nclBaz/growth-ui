@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import {updateProfile} from '../recoilState/api'
+import { updateProfile } from "../../recoilState/api";
+import "./styles.scss";
 
 const ProfileModal = ({ show, handleShow, client }) => {
   const [info, setInfo] = useState({
@@ -24,8 +25,8 @@ const ProfileModal = ({ show, handleShow, client }) => {
       setValidation(true);
     } else {
       setValidation(false);
-    const update = await updateProfile(info)
-    console.log(update)
+      const update = await updateProfile(info);
+      console.log(update);
     }
   };
 

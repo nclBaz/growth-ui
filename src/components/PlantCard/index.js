@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Imagemodal from "./ImageModal";
+import Imagemodal from "../ImageModal";
 
 const PlantCard = ({ plant }) => {
   const [modal, handleModal] = useState(false);
