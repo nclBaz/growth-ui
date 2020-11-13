@@ -1,12 +1,12 @@
 import axios from "axios"
-const server = process.env.REACT_APP_API_URL
+const server = "https://detart-be.herokuapp.com/"
 
 console.log("SERVER: ", server)
 
 export const login = async creds => {
   const head = {
     method: "POST",
-    url: "https://detart-fe.herokuapp.com/client/login",
+    url: server + "/client/login",
     data: creds,
   }
   try {
