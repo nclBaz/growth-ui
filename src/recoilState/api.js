@@ -1,5 +1,5 @@
 import axios from "axios"
-const server = "https://detart-be.herokuapp.com/"
+const server = process.env.REACT_APP_API_URL
 
 console.log("SERVER: ", server)
 
