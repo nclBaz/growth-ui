@@ -24,7 +24,7 @@
     "socket.io-client": "^2.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts start",
     "eject": "react-scripts eject"
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "12"
   }
 }
